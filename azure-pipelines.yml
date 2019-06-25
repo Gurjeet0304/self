@@ -13,7 +13,10 @@ variables:
   dockerRegistryServiceConnection: 'a253b681-87e7-4e15-ab46-3e760b6f1c56'
   imageRepository: 'gurjeetself'
   containerRegistry: 'gurjeet.azurecr.io'
-  dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
+  dockerfilePath: '- task: CopyFiles@2
+  inputs:
+    Contents: 'azure.yaml'
+    TargetFolder: '$(Build.SourcesDirectory)'/Dockerfile'
   tag: '$(Build.BuildId)'
   
   # Agent VM image name
