@@ -1,1 +1,16 @@
-
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: gurjeetself 
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: gurjeetself 
+    spec:
+      containers:
+        - name: gurjeetself 
+          image: gurjeet.azurecr.io/gurjeetself 
+          ports:
+          - containerPort: 80
