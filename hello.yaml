@@ -14,3 +14,6 @@ spec:
           image: gurjeet.azurecr.io/gurjeetself 
           ports:
           - containerPort: 80
+      imagePullSecrets:
+      - name: mydocker
+          
